@@ -1,9 +1,20 @@
+
 #include <iostream>
 #include <cstdlib>
+#include <math.h>
 
 using namespace std;
 int main()
 {
+  int choice;
+  cout << "1. Simple Interest" << endl;
+  cout << "2. Compound Interest" << endl;
+  cin >> choice;
+  
+  switch (choice)
+  {
+    case 1:
+  
     double interest, principle, rate, time, total;
 
     system("title Investment Interest Calculator");
@@ -34,13 +45,34 @@ int main()
     cout << "\n" << endl;
 
     cout << "The total amount will be: \n" << total << endl;
-    cout << "\n" << endl;
-
-    cout << "Thank you!" << endl;
 
 
 
     return 0;
+  }
+  
+  case 2:
+  {
+    // Amount = principle (1 + rate) ^ time
+    
+    float Amount, P, rate, t;
+    
+    cout << "How much will be invested? " << endl;
+    cin >> P;
+    
+    cout << "What is the rate (%) ?" << endl;
+    cin >> rate;
+    
+    rate = rate / 100;
+    
+    cout << "How long will this investment last in years? " << endl;
+    cin >> t;
+    
+    Amount = P * (1 + rate) ** t;
+    
+    cout << "Total amount = $" << Amount << endl;
+    
+    return 0;
+  }
+  
 }
-
-
